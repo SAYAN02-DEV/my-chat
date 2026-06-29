@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #eef1f5;
+  color: #1c1e21;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Login screen ---------- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.login-card h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.login-card p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.login-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-btn {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d8dee5;
+  background: #f7f9fb;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.login-btn:hover {
+  background: #eaf0ff;
+  border-color: #4c6ef5;
+}
+
+/* ---------- Chat screen ---------- */
+.chat-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e7ed;
+}
+
+.chat-header .who {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header .who strong {
+  font-size: 16px;
+}
+
+.chat-header .status {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.status.online {
+  color: #2f9e44;
+}
+
+.logout-btn {
+  border: none;
+  background: transparent;
+  color: #4c6ef5;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble-row {
+  display: flex;
+}
+
+.bubble-row.mine {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.bubble-row.mine .bubble {
+  background: #4c6ef5;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble-row.theirs .bubble {
+  background: #fff;
+  color: #1c1e21;
+  border: 1px solid #e3e7ed;
+  border-bottom-left-radius: 4px;
+}
+
+.bubble .timestamp {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.bubble img,
+.bubble video {
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.file-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.file-pill .file-icon {
+  font-size: 20px;
+}
+
+.typing-indicator {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 0 18px 8px;
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #fff;
+  border-top: 1px solid #e3e7ed;
+}
+
+.composer input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 20px;
+  border: 1px solid #d8dee5;
+  font-size: 15px;
+  outline: none;
+}
+
+.composer input[type="text"]:focus {
+  border-color: #4c6ef5;
+}
+
+.icon-btn {
+  background: #f1f3f8;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: #e6eaf3;
+}
+
+.send-btn {
+  background: #4c6ef5;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.upload-progress {
+  font-size: 12px;
+  color: #6b7280;
+  padding: 0 16px 6px;
+}
