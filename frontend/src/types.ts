@@ -1,4 +1,5 @@
 export type MessageKind = "text" | "image" | "video" | "file";
+export type MessageStatus = "sent" | "delivered" | "seen";
 
 export interface ChatMessage {
   _id?: string;
@@ -10,4 +11,5 @@ export interface ChatMessage {
   fileName?: string;
   mimeType?: string;
   createdAt?: string;
+  status?: MessageStatus;
 }

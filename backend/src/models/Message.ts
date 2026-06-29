@@ -1,5 +1,5 @@
 import { Schema, model, Document } from "mongoose";
-import { MessageKind } from "../types";
+import { MessageKind, MessageStatus } from "../types";
 
 export interface MessageDoc extends Document {
   sender: string;
@@ -9,6 +9,7 @@ export interface MessageDoc extends Document {
   fileUrl?: string;
   fileName?: string;
   mimeType?: string;
+  status: MessageStatus;
   createdAt: Date;
 }
 
@@ -24,6 +25,11 @@ const MessageSchema = new Schema<MessageDoc>({
   fileUrl: { type: String },
   fileName: { type: String },
   mimeType: { type: String },
+  status: {
+    type: String,
+    enum: ["sent", "delivered", "seen"],
+    default: "sent",
+  },
   createdAt: { type: Date, default: Date.now },
 });
 

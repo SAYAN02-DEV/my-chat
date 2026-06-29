@@ -1,4 +1,5 @@
 export type MessageKind = "text" | "image" | "video" | "file";
+export type MessageStatus = "sent" | "delivered" | "seen";
 
 export interface ChatMessageInput {
   sender: string;
